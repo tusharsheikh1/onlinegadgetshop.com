@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useGo } from "@/lib/nav";
 import { useEffect, useState } from "react";
 import { categories } from "@/data/products";
 import { useStore } from "@/lib/store";
@@ -10,7 +11,7 @@ import { Logo } from "./Logo";
 function useMounted() { const [m, setM] = useState(false); useEffect(() => setM(true), []); return m; }
 
 export function Header() {
-  const router = useRouter();
+  const go = useGo();
   const pathname = usePathname();
   const mounted = useMounted();
   const cartCount = useStore((s) => s.cart.reduce((n, l) => n + l.qty, 0));
@@ -18,7 +19,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [cats, setCats] = useState(false);
   const [q, setQ] = useState("");
-  const submit = (e: React.FormEvent) => { e.preventDefault(); setOpen(false); router.push(`/search?q=${encodeURIComponent(q.trim())}`); };
+  const submit = (e: React.FormEvent) => { e.preventDefault(); setOpen(false); go(`/search?q=${encodeURIComponent(q.trim())}`); };
   useEffect(() => { setQ(pathname === "/search" ? new URLSearchParams(window.location.search).get("q") ?? "" : ""); }, [pathname]);
   const count = mounted ? cartCount : 0;
 

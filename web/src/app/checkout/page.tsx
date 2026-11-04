@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/Icon";
-import { useRouter } from "next/navigation";
+import { useGo } from "@/lib/nav";
 import { useState } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageTitle } from "@/components/Page";
@@ -17,7 +17,7 @@ const fields = [["name", "Full name", "text", "name", "col-span-2 sm:col-span-1"
 const step = "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs";
 
 export default function Checkout() {
-  const router = useRouter(); const ready = useHydrated();
+  const go = useGo(); const ready = useHydrated();
   const cart = useStore((s) => s.cart); const clear = useStore((s) => s.clearCart); const setLast = useStore((s) => s.setLastOrder);
   const [pay, setPay] = useState("Cash on delivery");
   const [f, setF] = useState<Record<string, string>>({ name: "", phone: "", email: "", area: "Dhaka", address: "" });
@@ -36,7 +36,7 @@ export default function Checkout() {
     ev.preventDefault(); const e = validate(); setErr(e);
     if (Object.keys(e).length || !lines.length) return;
     setLast({ id: "GH-" + (10429 + Math.floor(Math.random() * 500)), lines, total: t.total, payment: pay });
-    clear(); router.push("/confirmation");
+    clear(); go("/confirmation");
   };
   if (ready && !lines.length) return <div className="py-16 text-center"><p className="font-bold">Your cart is empty.</p><Link href="/products" className="btn-primary mt-4">Continue shopping</Link></div>;
   return (

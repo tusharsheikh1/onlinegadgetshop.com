@@ -10,6 +10,10 @@ npm run build && npm run lint
 ```
 Try coupon `GADGET10` in the cart.
 
+`npm run export` writes a static copy to `out/` that works from any URL prefix
+(pages become `<route>/index.html`, links do full page loads). Use it to host the
+demo without a Node server.
+
 | Route | Mockup |
 |---|---|
 | `/` | 01 Home |

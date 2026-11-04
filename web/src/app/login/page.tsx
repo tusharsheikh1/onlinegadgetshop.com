@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useGo } from "@/lib/nav";
 import { useState } from "react";
 import { Icon } from "@/components/Icon";
 
 export default function Login() {
-  const router = useRouter();
+  const go = useGo();
   const [mode, setMode] = useState<"in" | "up">("in");
   const [err, setErr] = useState(""); const [show, setShow] = useState(false);
   const switchTo = (m: "in" | "up") => { setMode(m); setErr(""); };
@@ -14,7 +14,7 @@ export default function Login() {
     if (mode === "up" && String(d.get("name")).trim().length < 2) return setErr("Enter your full name.");
     if (!/^\S+@\S+\.\S+$/.test(String(d.get("email")))) return setErr("Enter a valid email address.");
     if (String(d.get("password")).length < 6) return setErr("Password must be at least 6 characters.");
-    router.push("/account");
+    go("/account");
   };
   return (
     <div className="grid gap-6 py-4 sm:py-8 lg:grid-cols-[1.05fr_1fr]">
