@@ -1,0 +1,128 @@
+Generation: built-in image generation.
+Design system: white, navy #101828, electric blue #2563EB; Inter-like typography; 12px radii. Desktop target 1440 × 1024; mobile target 390 × 844; actual exported resolutions listed in PAGE_INDEX.csv.
+
+01 Homepage (Desktop)
+Hero: Upgrade your everyday. Premium headphones, smartwatch and phone product photography; Shop now button; category strip and featured product grid.
+
+01 Homepage (Mobile)
+Hero: Upgrade your everyday. Premium headphones, smartwatch and phone product photography; Shop now button; category strip and featured product grid.
+
+02 All Products (Desktop)
+Catalog heading, result count, sidebar filters for category brand price stock warranty, sorting, three-column product grid.
+
+02 All Products (Mobile)
+Catalog heading, result count, sidebar filters for category brand price stock warranty, sorting, three-column product grid.
+
+03 Category — Headphones (Desktop)
+Headphones category with breadcrumb, small editorial banner, chips wireless over-ear earbuds, filters and product grid.
+
+03 Category — Headphones (Mobile)
+Headphones category with breadcrumb, small editorial banner, chips wireless over-ear earbuds, filters and product grid.
+
+04 Search Results (Desktop)
+Search input with query wireless headphones, matching product results, result count, relevance sorting and filter controls.
+
+04 Search Results (Mobile)
+Search input with query wireless headphones, matching product results, result count, relevance sorting and filter controls.
+
+05 Product Details (Desktop)
+Large black wireless headphones photo with thumbnails; name AeroSound Pro, price ৳8,990, reviews, In stock, color choice, quantity, Add to cart, delivery and warranty; specs below.
+
+05 Product Details (Mobile)
+Large black wireless headphones photo with thumbnails; name AeroSound Pro, price ৳8,990, reviews, In stock, color choice, quantity, Add to cart, delivery and warranty; specs below.
+
+06 Compare Products (Desktop)
+Compare three headphones with aligned product images, price, battery life, noise cancellation, connectivity, warranty and add-to-cart buttons. Mobile comparison uses two visible columns.
+
+06 Compare Products (Mobile)
+Compare three headphones with aligned product images, price, battery life, noise cancellation, connectivity, warranty and add-to-cart buttons. Mobile comparison uses two visible columns.
+
+07 Offers & Deals (Desktop)
+Blue editorial sale banner Gadget Week, up to 30% off; deal product cards with old/new taka prices, category tabs and bundle offer.
+
+07 Offers & Deals (Mobile)
+Blue editorial sale banner Gadget Week, up to 30% off; deal product cards with old/new taka prices, category tabs and bundle offer.
+
+08 Wishlist (Desktop)
+Saved products with photos prices stock labels Add to cart and remove heart; four gadgets, restrained clean layout.
+
+08 Wishlist (Mobile)
+Saved products with photos prices stock labels Add to cart and remove heart; four gadgets, restrained clean layout.
+
+09 Shopping Cart (Desktop)
+Two cart rows: AeroSound Pro ৳8,990 and charging adapter ৳1,490, each quantity 1; subtotal ৳10,480, delivery ৳120, total ৳10,600. Coupon and checkout CTA.
+
+09 Shopping Cart (Mobile)
+Two cart rows: AeroSound Pro ৳8,990 and charging adapter ৳1,490, each quantity 1; subtotal ৳10,480, delivery ৳120, total ৳10,600. Coupon and checkout CTA.
+
+10 Checkout (Desktop)
+Delivery address form, Dhaka delivery ৳120; payment choices bKash Nagad Card Cash on delivery; order summary subtotal ৳10,480 total ৳10,600; Place order button.
+
+10 Checkout (Mobile)
+Delivery address form, Dhaka delivery ৳120; payment choices bKash Nagad Card Cash on delivery; order summary subtotal ৳10,480 total ৳10,600; Place order button.
+
+11 Order Confirmation (Desktop)
+Success check, Thank you for your order, order GH-10428; total ৳10,600, Cash on delivery, delivery Nov 7–9 2026, track order CTA and ordered headphones/adapter.
+
+11 Order Confirmation (Mobile)
+Success check, Thank you for your order, order GH-10428; total ৳10,600, Cash on delivery, delivery Nov 7–9 2026, track order CTA and ordered headphones/adapter.
+
+12 Login / Register (Desktop)
+Sign in form email password Remember me Forgot password Sign in, Create account tab and tasteful headphone editorial image; focused no clutter.
+
+12 Login / Register (Mobile)
+Sign in form email password Remember me Forgot password Sign in, Create account tab and tasteful headphone editorial image; focused no clutter.
+
+13 My Account (Desktop)
+Profile name Samira Rahman, email samira@example.com, edit profile and saved Dhaka address; account navigation Overview Orders Addresses Settings with profile section active.
+
+13 My Account (Mobile)
+Profile name Samira Rahman, email samira@example.com, edit profile and saved Dhaka address; account navigation Overview Orders Addresses Settings with profile section active.
+
+14 My Orders (Desktop)
+Account navigation; list GH-10428 Nov 4 2026 processing ৳10,600, GH-10316 Oct 20 delivered ৳4,990, GH-10225 Oct 2 delivered ৳2,490, thumbnails and View order actions.
+
+14 My Orders (Mobile)
+Account navigation; list GH-10428 Nov 4 2026 processing ৳10,600, GH-10316 Oct 20 delivered ৳4,990, GH-10225 Oct 2 delivered ৳2,490, thumbnails and View order actions.
+
+15 Order Details & Tracking (Desktop)
+Order GH-10428 placed Nov 4 2026; progress ordered confirmed packing shipped delivered with packing active; two purchased items, address, total ৳10,600, estimated delivery Nov 7–9.
+
+15 Order Details & Tracking (Mobile)
+Order GH-10428 placed Nov 4 2026; progress ordered confirmed packing shipped delivered with packing active; two purchased items, address, total ৳10,600, estimated delivery Nov 7–9.
+
+16 About Us (Desktop)
+Headline Technology for everyday life, editorial store/team imagery, Our story, product quality warranty support values, Bangladesh gadget store.
+
+16 About Us (Mobile)
+Headline Technology for everyday life, editorial store/team imagery, Our story, product quality warranty support values, Bangladesh gadget store.
+
+17 Contact & Support (Desktop)
+How can we help? contact form name email order number message, WhatsApp support button, demo Dhaka showroom address, support hours, abstract location map.
+
+17 Contact & Support (Mobile)
+How can we help? contact form name email order number message, WhatsApp support button, demo Dhaka showroom address, support hours, abstract location map.
+
+18 FAQ (Desktop)
+How can we help? search help field, topic tabs delivery payment returns warranty, one expanded delivery answer and several readable accordion questions.
+
+18 FAQ (Mobile)
+How can we help? search help field, topic tabs delivery payment returns warranty, one expanded delivery answer and several readable accordion questions.
+
+19 Blog / Buying Guides (Desktop)
+The Gadget Journal; featured headphone buying guide with large photo, article grid including smartwatch laptop charging guides and topic tabs.
+
+19 Blog / Buying Guides (Mobile)
+The Gadget Journal; featured headphone buying guide with large photo, article grid including smartwatch laptop charging guides and topic tabs.
+
+20 Article Details (Desktop)
+Buying guide headline How to choose your next wireless headphones, date Nov 4 2026, author GadgetHub Team, hero headphone photo, readable opening paragraphs and Battery life section, desktop table of contents.
+
+20 Article Details (Mobile)
+Buying guide headline How to choose your next wireless headphones, date Nov 4 2026, author GadgetHub Team, hero headphone photo, readable opening paragraphs and Battery life section, desktop table of contents.
+
+21 Policy — Shared Template (Desktop)
+Returns & Warranty Policy; Updated Nov 4 2026; side navigation Privacy Terms Shipping Returns & Warranty, readable policy headings Return eligibility, How to request a return, Warranty coverage. Illustrative policy copy, 7-day return request; labels Privacy Policy, Terms & Conditions, Shipping Policy visible.
+
+21 Policy — Shared Template (Mobile)
+Returns & Warranty Policy; Updated Nov 4 2026; side navigation Privacy Terms Shipping Returns & Warranty, readable policy headings Return eligibility, How to request a return, Warranty coverage. Illustrative policy copy, 7-day return request; labels Privacy Policy, Terms & Conditions, Shipping Policy visible.

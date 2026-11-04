@@ -1,0 +1,43 @@
+Number,Layout,Device,File,Width,Height
+1,Homepage,Desktop,Desktop/01_home_desktop.png,1487,1058
+1,Homepage,Mobile,Mobile/01_home_mobile.png,852,1846
+2,All Products,Desktop,Desktop/02_all-products_desktop.png,1487,1058
+2,All Products,Mobile,Mobile/02_all-products_mobile.png,977,1610
+3,Category — Headphones,Desktop,Desktop/03_category_desktop.png,1487,1058
+3,Category — Headphones,Mobile,Mobile/03_category_mobile.png,852,1846
+4,Search Results,Desktop,Desktop/04_search-results_desktop.png,1487,1058
+4,Search Results,Mobile,Mobile/04_search-results_mobile.png,852,1846
+5,Product Details,Desktop,Desktop/05_product-details_desktop.png,1487,1058
+5,Product Details,Mobile,Mobile/05_product-details_mobile.png,852,1846
+6,Compare Products,Desktop,Desktop/06_compare_desktop.png,1487,1058
+6,Compare Products,Mobile,Mobile/06_compare_mobile.png,852,1846
+7,Offers & Deals,Desktop,Desktop/07_offers_desktop.png,1487,1058
+7,Offers & Deals,Mobile,Mobile/07_offers_mobile.png,852,1846
+8,Wishlist,Desktop,Desktop/08_wishlist_desktop.png,1487,1058
+8,Wishlist,Mobile,Mobile/08_wishlist_mobile.png,1024,1536
+9,Shopping Cart,Desktop,Desktop/09_cart_desktop.png,1487,1058
+9,Shopping Cart,Mobile,Mobile/09_cart_mobile.png,977,1610
+10,Checkout,Desktop,Desktop/10_checkout_desktop.png,1487,1058
+10,Checkout,Mobile,Mobile/10_checkout_mobile.png,852,1846
+11,Order Confirmation,Desktop,Desktop/11_confirmation_desktop.png,1487,1058
+11,Order Confirmation,Mobile,Mobile/11_confirmation_mobile.png,970,1622
+12,Login / Register,Desktop,Desktop/12_login_desktop.png,1487,1058
+12,Login / Register,Mobile,Mobile/12_login_mobile.png,852,1846
+13,My Account,Desktop,Desktop/13_account_desktop.png,1487,1058
+13,My Account,Mobile,Mobile/13_account_mobile.png,852,1846
+14,My Orders,Desktop,Desktop/14_orders_desktop.png,1487,1058
+14,My Orders,Mobile,Mobile/14_orders_mobile.png,969,1622
+15,Order Details & Tracking,Desktop,Desktop/15_tracking_desktop.png,1487,1058
+15,Order Details & Tracking,Mobile,Mobile/15_tracking_mobile.png,852,1846
+16,About Us,Desktop,Desktop/16_about_desktop.png,1487,1058
+16,About Us,Mobile,Mobile/16_about_mobile.png,852,1846
+17,Contact & Support,Desktop,Desktop/17_contact_desktop.png,1487,1058
+17,Contact & Support,Mobile,Mobile/17_contact_mobile.png,1003,1568
+18,FAQ,Desktop,Desktop/18_faq_desktop.png,1487,1058
+18,FAQ,Mobile,Mobile/18_faq_mobile.png,852,1846
+19,Blog / Buying Guides,Desktop,Desktop/19_blog_desktop.png,1487,1058
+19,Blog / Buying Guides,Mobile,Mobile/19_blog_mobile.png,852,1846
+20,Article Details,Desktop,Desktop/20_article_desktop.png,1487,1058
+20,Article Details,Mobile,Mobile/20_article_mobile.png,977,1610
+21,Policy — Shared Template,Desktop,Desktop/21_policy_desktop.png,1487,1058
+21,Policy — Shared Template,Mobile,Mobile/21_policy_mobile.png,977,1610
