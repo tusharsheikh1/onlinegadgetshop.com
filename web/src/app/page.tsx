@@ -16,7 +16,7 @@ export default function Home() {
             <p className="mt-5 max-w-md text-lg text-ink-muted">The latest phones, smartwatches and headphones for work, play and everything in between.</p>
             <Link href="/products" className="btn-primary mt-8 px-7 py-3.5 text-base">Shop now<Icon name="arrow" className="h-5 w-5" /></Link>
           </div>
-          <Image src="/img/hero-products.png" alt="Headphones, smartwatch and phone" width={900} height={450} priority className="h-full w-full object-cover object-left" />
+          <Image src="/img/hero-products.png" alt="Headphones, smartwatch and phone" width={900} height={450} priority className="h-full w-full object-contain object-right-bottom" />
         </div>
       </section>
 

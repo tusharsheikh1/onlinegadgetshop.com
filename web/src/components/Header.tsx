@@ -23,7 +23,7 @@ export function Header() {
   const search = (
     <form onSubmit={submit} role="search" className="flex items-center gap-2 rounded-xl border border-line bg-surface px-3 py-1">
       <Icon name="search" className="h-5 w-5 shrink-0 text-ink-muted" />
-      <input value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search products" placeholder="Search for phones, laptops, headphones and more…" className="min-w-0 flex-1 bg-transparent py-2 text-sm outline-none" />
+      <input value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search products" placeholder="Search gadgets, brands and more…" className="min-w-0 flex-1 bg-transparent py-2 text-sm outline-none" />
       <button className="hidden rounded-lg bg-brand px-4 py-1.5 text-sm font-semibold text-white sm:block">Search</button>
     </form>
   );
@@ -37,9 +37,9 @@ export function Header() {
         <nav aria-label="Account" className="ml-auto flex items-center gap-1 sm:gap-5">
           <Link href="/account" className="hidden items-center gap-2 text-sm font-medium lg:flex"><Icon name="user" />Account</Link>
           <Link href="/wishlist" className="relative hidden items-center gap-2 text-sm font-medium lg:flex"><Icon name="heart" />Wishlist{mounted && wishCount > 0 && <span className="rounded-full bg-brand px-1.5 text-[11px] text-white">{wishCount}</span>}</Link>
-          <Link href="/cart" className="relative flex items-center gap-2 text-sm font-medium" aria-label={`Cart, ${count} items`}>
-            <Icon name="cart" className="h-6 w-6 lg:h-5 lg:w-5" /><span className="hidden lg:inline">Cart</span>
-            <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-brand px-1 text-[11px] font-bold text-white">{count}</span>
+          <Link href="/cart" className="relative mr-2 flex items-center gap-2 text-sm font-medium" aria-label={`Cart, ${count} items`}>
+            <span className="relative"><Icon name="cart" className="h-6 w-6 lg:h-5 lg:w-5" />
+            <span className="absolute -right-2.5 -top-2.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-brand px-1 text-[11px] font-bold text-white">{count}</span></span><span className="hidden lg:inline">Cart</span>
           </Link>
         </nav>
       </div>
