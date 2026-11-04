@@ -57,6 +57,11 @@ export function ProductDetail({ p }: { p: Product }) {
           <dl className="card divide-y divide-line">{Object.entries(specs).map(([k, v]) => <div key={k} className="grid grid-cols-[140px_1fr] gap-4 px-4 py-2.5 text-sm sm:grid-cols-[180px_1fr]"><dt className="font-semibold text-ink-muted">{k}</dt><dd className="capitalize-first">{v}</dd></div>)}</dl></section>
         {rich && <section className="card h-fit bg-surface p-6"><h2 className="mb-4 text-xl font-extrabold">Key Features</h2><ul className="space-y-3">{features.map((f) => <li key={f} className="flex gap-3 text-sm"><Icon name="check" className="h-5 w-5 shrink-0 text-brand" />{f}</li>)}</ul></section>}
       </div>
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-4 border-t border-line bg-white/95 px-4 py-3 shadow-pop backdrop-blur lg:hidden">
+        <div className="min-w-0"><p className="text-xl font-extrabold leading-tight">{taka(p.price)}</p><p className="truncate text-xs text-ink-muted">{p.name}</p></div>
+        <button disabled={!p.inStock} onClick={() => { add(p.id, qty); setAdded(true); setTimeout(() => setAdded(false), 2000); }} className="btn-primary shrink-0 px-6"><Icon name="cart" className="h-5 w-5" />{added ? "Added ✓" : "Add to cart"}</button>
+      </div>
+      <div aria-hidden className="h-16 lg:hidden" />
     </div>
   );
 }

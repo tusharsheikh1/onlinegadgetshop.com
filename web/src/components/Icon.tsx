@@ -29,6 +29,15 @@ const paths: Record<string, string> = {
   clock: "M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3 2",
   chat: "M21 12a8 8 0 01-11.500 7.200L4 20l1-4.500A8 8 0 1121 12z",
   box: "M3 7l9-4 9 4v10l-9 4-9-4V7zM3 7l9 4 9-4M12 11v10",
+  lock: "M6 11h12v9H6zM8 11V8a4 4 0 118 0v3",
+  bell: "M6 16V11a6 6 0 1112 0v5l2 2H4l2-2zM10 21h4",
+  battery: "M3 8h15v8H3zM21 11v2",
+  wave: "M3 12h3l2-6 4 12 3-9 2 3h4",
+  home: "M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10",
+  logout: "M10 4H5v16h5M15 8l4 4-4 4M19 12H9",
+  mail: "M3 6h18v12H3zM3 7l9 7 9-7",
+  send: "M21 3L3 11l7 3 3 7 8-18zM10 14l11-11",
+  eye: "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 100-6 3 3 0 000 6z",
   star: "M12 3l2.800 5.700 6.200.9-4.500 4.400 1 6.200L12 17.200 6.500 20.200l1-6.200L3 9.600l6.200-.9L12 3z",
 };
 export function Icon({ name, className = "h-5 w-5", fill = false }: { name: keyof typeof paths | string; className?: string; fill?: boolean }) {

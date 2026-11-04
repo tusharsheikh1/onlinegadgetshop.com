@@ -31,7 +31,7 @@ export default function Home() {
 
       <section className="mt-10">
         <div className="mb-4 flex items-end justify-between"><h2 className="h2">Featured products</h2><Link href="/products" className="flex items-center gap-1 text-sm font-semibold text-brand">View all products<Icon name="arrow" className="h-4 w-4" /></Link></div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{featured.map((p) => <ProductCard key={p.id} p={p} layout="stack" />)}</div>
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">{featured.map((p) => <ProductCard key={p.id} p={p} layout="stack" />)}</div>
       </section>
       <Trust />
     </>

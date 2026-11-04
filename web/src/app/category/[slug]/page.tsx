@@ -17,11 +17,17 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Shop", href: "/products" }, { label: cat.name }]} />
-      <section className="relative mb-6 overflow-hidden rounded-2xl bg-gradient-to-r from-blue-50 to-blue-200 p-6 sm:p-10">
-        <h1 className="h1">{cat.name}</h1>
-        <p className="mt-2 max-w-md text-ink-muted">Discover the best {cat.name.toLowerCase()} with official warranty and fast delivery across Bangladesh.</p>
-        <Image src={cat.image} alt="" width={160} height={160} className="absolute bottom-2 right-6 hidden h-32 w-auto object-contain sm:block" />
-      </section>
+      {cat.slug === "headphones" ? (
+        <Image src="/img/category-hero.png" alt="Headphones: find your perfect sound. Wireless freedom, immersive audio and all-day comfort." width={1380} height={209} priority className="mb-6 w-full rounded-2xl" />
+      ) : (
+        <section className="relative mb-6 overflow-hidden rounded-2xl bg-gradient-to-r from-blue-50 to-blue-200 p-6 sm:p-10">
+          <p className="text-sm font-bold uppercase tracking-wide text-brand">{cat.name}</p>
+          <p className="mt-1 text-3xl font-extrabold tracking-tight">Shop {cat.name}</p>
+          <p className="mt-2 max-w-md text-ink-muted">Discover the best {cat.name.toLowerCase()} with official warranty and fast delivery across Bangladesh.</p>
+          <Image src={cat.image} alt="" width={160} height={160} className="absolute bottom-2 right-6 hidden h-32 w-auto object-contain sm:block" />
+        </section>
+      )}
+      <div className="mb-4 flex items-baseline gap-3"><h1 className="h1">{cat.name}</h1><span className="text-sm text-ink-muted">{items.length} products</span></div>
       <Catalog items={items} showCategory={false} chips={chips[cat.slug]} />
     </>
   );

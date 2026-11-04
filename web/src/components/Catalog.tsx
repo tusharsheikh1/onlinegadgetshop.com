@@ -84,7 +84,7 @@ export function Catalog({ items, showCategory = true, defaultSort = "newest", ch
           {shown.length === 0 ? (
             <div className="card p-10 text-center"><p className="font-bold">No products match your filters.</p><button onClick={clear} className="btn-primary mt-4">Clear filters</button></div>
           ) : (
-            <div className={view === "grid" ? "grid gap-4 sm:grid-cols-2 xl:grid-cols-3" : "grid gap-4"}>{shown.map((p) => <ProductCard key={p.id} p={p} layout={view === "grid" ? "stack" : "row"} />)}</div>
+            <div className={view === "grid" ? "grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-3" : "grid gap-4"}>{shown.map((p) => <ProductCard key={p.id} p={p} layout={view === "grid" ? "stack" : "row"} />)}</div>
           )}
           {pages > 1 && (
             <nav aria-label="Pagination" className="mt-8 flex items-center justify-center gap-2">
