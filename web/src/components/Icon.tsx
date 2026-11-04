@@ -38,6 +38,8 @@ const paths: Record<string, string> = {
   mail: "M3 6h18v12H3zM3 7l9 7 9-7",
   send: "M21 3L3 11l7 3 3 7 8-18zM10 14l11-11",
   eye: "M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 15a3 3 0 100-6 3 3 0 000 6z",
+  filter: "M3 5h18l-7 8v6l-4 2v-8L3 5z",
+  back: "M19 12H5M11 18l-6-6 6-6",
   star: "M12 3l2.800 5.700 6.200.9-4.500 4.400 1 6.200L12 17.200 6.500 20.200l1-6.200L3 9.600l6.200-.9L12 3z",
 };
 export function Icon({ name, className = "h-5 w-5", fill = false }: { name: keyof typeof paths | string; className?: string; fill?: boolean }) {

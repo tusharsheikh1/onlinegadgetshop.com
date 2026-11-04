@@ -1,5 +1,5 @@
 import { byId } from "@/data/products";
-import { DELIVERY_FEE } from "./store";
+import { DELIVERY_FEE } from "./pricing";
 
 export function totals(lines: { id: string; qty: number }[], discount = 0) {
   const subtotal = lines.reduce((n, l) => n + (byId(l.id)?.price ?? 0) * l.qty, 0);

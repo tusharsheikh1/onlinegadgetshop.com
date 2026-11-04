@@ -26,6 +26,7 @@ export function Header() {
     <form onSubmit={submit} role="search" className="flex items-center gap-2 rounded-xl border border-line bg-surface px-3 py-1">
       <Icon name="search" className="h-5 w-5 shrink-0 text-ink-muted" />
       <input value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search products" placeholder="Search gadgets, brands and more…" className="min-w-0 flex-1 bg-transparent py-2 text-sm outline-none" />
+      {q && <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="rounded-full p-1 text-ink-muted hover:text-navy"><Icon name="x" className="h-4 w-4" /></button>}
       <button className="hidden rounded-lg bg-brand px-4 py-1.5 text-sm font-semibold text-white sm:block">Search</button>
     </form>
   );

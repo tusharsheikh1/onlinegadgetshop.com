@@ -1,15 +1,32 @@
-export const orders = [
-  { id: "GH-10428", date: "Nov 4, 2026", status: "Processing", total: 10600, items: ["aerosound-pro", "charging-adapter"], image: "/img/order-headphones.png", thumbs: ["/img/order-headphones.png", "/img/order-watch.png"] },
-  { id: "GH-10316", date: "Oct 20, 2026", status: "Delivered", total: 4990, items: ["buds-pro-2"], image: "/img/order-watch.png", thumbs: ["/img/order-earbuds.png", "/img/order-phone.png"] },
-  { id: "GH-10225", date: "Oct 2, 2026", status: "Delivered", total: 2490, items: ["jbl-go-speaker"], image: "/img/order-speaker.png", thumbs: ["/img/order-speaker.png"] },
+import { DELIVERY_FEE } from "@/lib/pricing";
+
+export type OrderLine = { id: string; qty: number; price: number; image?: string };
+export type Order = { id: string; date: string; status: "Processing" | "Delivered"; lines: OrderLine[] };
+
+// Line prices are what the customer paid, so a past order can differ from today's price.
+export const orders: Order[] = [
+  { id: "GH-10428", date: "Nov 4, 2026", status: "Processing", lines: [{ id: "aerosound-pro", qty: 1, price: 8990 }, { id: "charging-adapter", qty: 1, price: 1490 }] },
+  { id: "GH-10316", date: "Oct 20, 2026", status: "Delivered", lines: [{ id: "deal-4", qty: 1, price: 4870, image: "/img/order-watch.png" }] },
+  { id: "GH-10225", date: "Oct 2, 2026", status: "Delivered", lines: [{ id: "deal-5", qty: 1, price: 2370, image: "/img/order-earbuds.png" }] },
 ];
+export const orderSubtotal = (o: Order) => o.lines.reduce((n, l) => n + l.price * l.qty, 0);
+export const orderTotal = (o: Order) => orderSubtotal(o) + DELIVERY_FEE;
+export const orderItemCount = (o: Order) => o.lines.reduce((n, l) => n + l.qty, 0);
+
+// One source for support details, so the contact page, FAQ and trust strip agree.
+export const support = {
+  phone: "+880 9612-345678",
+  email: "support@gadgethub.example",
+  showroom: "Shop 4B, Level 4, Jamuna Future Park, Kuril, Dhaka 1229",
+  hours: [["Saturday – Thursday", "10:00 AM – 9:00 PM"], ["Friday", "3:00 PM – 9:00 PM"]],
+};
 
 export const faqs: Record<string, { q: string; a: string }[]> = {
   Delivery: [
     { q: "How long does delivery take?", a: "Delivery usually takes 1–3 business days for Dhaka city and 2–5 business days for other cities and districts across Bangladesh, depending on your location and product availability. You'll see the estimated delivery time on the product page and at checkout." },
     { q: "Do you deliver all over Bangladesh?", a: "Yes. We deliver to all districts through trusted courier partners." },
     { q: "Can I track my order?", a: "Yes. Open My Orders and choose View order to see live progress." },
-    { q: "What is the delivery charge?", a: "Delivery is ৳120 inside Dhaka, and free on orders over ৳2,000." },
+    { q: "What is the delivery charge?", a: "Delivery is a flat ৳120 inside Dhaka. The charge is shown in your cart before you check out." },
     { q: "What happens if I'm not available at the time of delivery?", a: "The courier will call you and try again, or you can reschedule through support." },
     { q: "Can I change my delivery address after ordering?", a: "Yes, contact support before your order is shipped and we will update it." },
   ],
@@ -97,10 +114,10 @@ export const policies: Record<string, Policy> = {
       { icon: "help", h: "Liability", intro: "To the extent permitted by law, our liability is limited to the value of the order placed." },
     ] },
   shipping: { title: "Shipping Policy", nav: "Shipping Policy", icon: "truck", intro: "This policy explains delivery areas, timeframes and charges for orders placed on GadgetHub.",
-    highlights: [{ icon: "truck", t: "Fast delivery", d: "Dhaka in 1–2 working days" }, { icon: "tag", t: "Free over ৳2,000", d: "Otherwise ৳120 inside Dhaka" }, { icon: "pin", t: "Track every order", d: "Updates in My Orders" }],
+    highlights: [{ icon: "truck", t: "Fast delivery", d: "Dhaka in 1–2 working days" }, { icon: "tag", t: "Flat ৳120 delivery", d: "Inside Dhaka, shown before you pay" }, { icon: "pin", t: "Track every order", d: "Updates in My Orders" }],
     sections: [
       { icon: "clock", h: "Delivery times", intro: "Estimated delivery times after your order is confirmed:", bullets: ["Inside Dhaka: 1–2 working days.", "Outside Dhaka: 2–4 working days.", "Delivery times may vary during sales and public holidays."] },
-      { icon: "tag", h: "Delivery charges", intro: "Delivery is calculated at checkout:", bullets: ["৳120 inside Dhaka.", "Free delivery on orders over ৳2,000."] },
+      { icon: "tag", h: "Delivery charges", intro: "Delivery is calculated at checkout:", bullets: ["A flat ৳120 inside Dhaka.", "The charge is shown in your cart and at checkout before you pay."] },
       { icon: "pin", h: "Tracking your order", intro: "Track your order any time from My Orders using your order number." },
     ] },
   returns: { title: "Returns & Warranty Policy", nav: "Returns & Warranty", icon: "refresh", intro: "At GadgetHub, we want you to shop with confidence. This policy explains how returns, refunds, and product warranties work for orders placed on GadgetHub.",

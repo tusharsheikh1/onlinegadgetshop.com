@@ -13,8 +13,8 @@ export function SearchResults() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Search" }]} />
-      <div className="pb-6"><h1 className="h1">{q ? <>Search results for <span className="text-brand">“{q}”</span></> : "All results"}</h1><p className="mt-2 text-ink-muted">{items.length} product{items.length === 1 ? "" : "s"} found</p>
-        {q && <div className="mt-4 flex flex-wrap items-center gap-2 text-sm"><span className="text-ink-muted">Related searches:</span>{related.filter((r) => r !== q.toLowerCase()).map((r) => <Link key={r} href={`/search?q=${encodeURIComponent(r)}`} className="rounded-full bg-brand-soft px-4 py-1.5 font-medium hover:bg-blue-100">{r}</Link>)}</div>}</div>
+      <div className="pb-4 sm:pb-6"><h1 className="h1 text-xl sm:text-4xl">{q ? <>Search results for <span className="text-brand">“{q}”</span></> : "All results"}</h1><p className="mt-1 text-sm text-ink-muted sm:mt-2 sm:text-base">{items.length} product{items.length === 1 ? "" : "s"} found</p>
+        {q && <div className="chip-row mt-3 items-center text-sm sm:mt-4"><span className="shrink-0 text-ink-muted">Related searches:</span>{related.filter((r) => r !== q.toLowerCase()).map((r) => <Link key={r} href={`/search?q=${encodeURIComponent(r)}`} className="shrink-0 whitespace-nowrap rounded-full bg-brand-soft px-3.5 py-1.5 font-medium hover:bg-blue-100 sm:px-4">{r}</Link>)}</div>}</div>
       <Catalog key={q} items={items} defaultSort="relevance" />
     </>
   );

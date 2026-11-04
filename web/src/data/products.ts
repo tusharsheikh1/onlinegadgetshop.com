@@ -2,7 +2,11 @@ export type Category = { slug: string; name: string; image: string };
 export type Product = {
   id: string; slug: string; name: string; tagline: string; category: string; brand: string;
   price: number; oldPrice?: number; rating: number; reviews: number; image: string;
-  warranty: string; warrantyMonths: number; inStock: boolean; badge?: string; wireless?: boolean;
+  warranty: string; warrantyMonths: number; inStock: boolean; wireless?: boolean;
+  /** Short merchandising label shown on product cards ("New", "Bestseller"). */
+  badge?: string;
+  /** Category eyebrow shown above the title on the product page. */
+  kicker?: string;
   specs?: Record<string, string>;
 };
 
@@ -18,7 +22,7 @@ export const categories: Category[] = [
 ];
 
 export const products: Product[] = [
-  { id: "aerosound-pro", slug: "aerosound-pro", name: "AeroSound Pro", tagline: "Immersive sound, all-day comfort, and long-lasting battery.", category: "headphones", brand: "AeroSound", price: 8990, rating: 4.6, reviews: 1248, image: "/img/main-headphones.png", warranty: "1 year official warranty", warrantyMonths: 12, inStock: true, badge: "Wireless Headphones", wireless: true,
+  { id: "aerosound-pro", slug: "aerosound-pro", name: "AeroSound Pro", tagline: "Immersive sound, all-day comfort, and long-lasting battery.", category: "headphones", brand: "AeroSound", price: 8990, rating: 4.6, reviews: 1248, image: "/img/main-headphones.png", warranty: "1 year official warranty", warrantyMonths: 12, inStock: true, kicker: "Wireless Headphones", wireless: true,
     specs: { Driver: "40 mm dynamic drivers", Connectivity: "Bluetooth 5.3, 3.5 mm (wired)", "Battery Life": "Up to 60 hours (ANC off), up to 40 hours (ANC on)", "Noise Cancellation": "Hybrid Active Noise Cancellation (up to 35 dB)", Charging: "USB-C, ~2 hours for full charge", Weight: "≈ 260 g", "What's in the box": "AeroSound Pro, USB-C charging cable, 3.5 mm audio cable, carry case, user guide" } },
   { id: "charging-adapter", slug: "charging-adapter", name: "Fast Charging Adapter 30W", tagline: "Compact USB-C wall charger.", category: "accessories", brand: "Anker", price: 1490, rating: 4.5, reviews: 612, image: "/img/cart-charger.png", warranty: "6 months warranty", warrantyMonths: 6, inStock: true },
   { id: "iphone-16-pro", slug: "iphone-16-pro", name: "Apple iPhone 16 Pro 256GB (Natural Titanium)", tagline: "A powerful pro iPhone with a stunning display and pro camera.", category: "phones", brand: "Apple", price: 179999, rating: 4.8, reviews: 2140, image: "/img/p1.png", warranty: "1 year official warranty", warrantyMonths: 12, inStock: true, badge: "New" },

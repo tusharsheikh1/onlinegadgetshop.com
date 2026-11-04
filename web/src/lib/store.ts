@@ -38,4 +38,3 @@ export const useStore = create<State>()(
   )
 );
 
-export const DELIVERY_FEE = 120;
