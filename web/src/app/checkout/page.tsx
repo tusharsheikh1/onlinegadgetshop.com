@@ -10,6 +10,7 @@ import { byId, taka } from "@/data/products";
 import { useHydrated } from "@/lib/hooks";
 import { useStore } from "@/lib/store";
 import { totals } from "@/lib/totals";
+import { EmptyState } from "@/components/EmptyState";
 
 const pays = [["bKash", "Pay securely with your bKash account", "#E2136E"], ["Nagad", "Pay securely with your Nagad account", "#F26522"], ["Card", "Pay with Visa, Mastercard or American Express", "#2563EB"], ["Cash on delivery", "Pay in cash when you receive your order", "#16A34A"]];
 // Phones: name / phone + email / area / address. sm and up: two columns with the address full width.
@@ -38,7 +39,7 @@ export default function Checkout() {
     setLast({ id: "GH-" + (10429 + Math.floor(Math.random() * 500)), lines, total: t.total, payment: pay });
     clear(); go("/confirmation");
   };
-  if (ready && !lines.length) return <div className="py-16 text-center"><p className="font-bold">Your cart is empty.</p><Link href="/products" className="btn-primary mt-4">Continue shopping</Link></div>;
+  if (ready && !lines.length) return <EmptyState className="mt-6" icon="cart" title="Your cart is empty" text="Add a few gadgets to your cart before checking out."><Link href="/products" className="btn-primary">Continue shopping</Link></EmptyState>;
   return (
     <>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Cart", href: "/cart" }, { label: "Checkout" }]} />

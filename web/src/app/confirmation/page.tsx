@@ -6,13 +6,14 @@ import { Icon } from "@/components/Icon";
 import { useHydrated } from "@/lib/hooks";
 import { useStore } from "@/lib/store";
 import { DELIVERY_FEE } from "@/lib/pricing";
+import { EmptyState } from "@/components/EmptyState";
 
 const next = [["truck", "We'll prepare your order", "We'll pack your items and get them ready for delivery."], ["bell", "Get delivery updates", "Track your order in real time and know when it's arriving."], ["headset", "Need help?", "Our support team is here to help you with your order."]];
 
 export default function Confirmation() {
   const o = useStore((s) => s.lastOrder); const ready = useHydrated();
   if (!ready) return null;
-  if (!o) return <div className="py-16 text-center"><p className="font-bold">No recent order found.</p><Link href="/products" className="btn-primary mt-4">Continue shopping</Link></div>;
+  if (!o) return <EmptyState className="mt-6" icon="box" title="No recent order found" text="Once you place an order, its confirmation will appear here."><Link href="/products" className="btn-primary">Continue shopping</Link></EmptyState>;
   const n = o.lines.reduce((a, l) => a + l.qty, 0);
   return (
     <div className="py-5 sm:py-8">

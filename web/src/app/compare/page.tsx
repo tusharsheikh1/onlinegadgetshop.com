@@ -8,6 +8,7 @@ import { Rating } from "@/components/Stars";
 import { byId, Product, products, taka } from "@/data/products";
 import { useStore } from "@/lib/store";
 import { useHydrated } from "@/lib/hooks";
+import { EmptyState } from "@/components/EmptyState";
 
 const spec = (p: Product, k: string, fallback = "—") => p.specs?.[k] ?? fallback;
 const rows: [string, string, (p: Product) => string, boolean?][] = [
@@ -29,8 +30,7 @@ export default function Compare() {
       <PageTitle title="Compare Products" sub="See key features side by side and choose the right product for you." />
       {items.length > 0 && <div className="mb-3 flex items-center justify-between text-sm"><p className="font-bold">Comparing {items.length} product{items.length > 1 ? "s" : ""}</p><Link href="/products" className="flex items-center gap-1 font-semibold text-brand"><Icon name="chevronL" className="h-4 w-4" />Back to shopping</Link></div>}
       {items.length === 0 ? (
-        <div className="card p-10 text-center"><p className="font-bold">Nothing to compare yet.</p><p className="mt-1 text-ink-muted">Use “+ Compare” on any product card.</p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">{suggestions.map((p) => <button key={p.id} className="btn-outline" onClick={() => toggle(p.id)}>+ {p.name}</button>)}</div></div>
+        <EmptyState icon="compare" title="Nothing to compare yet" text="Use the compare button on any product card, or start with one of these.">{suggestions.map((p) => <button key={p.id} className="btn-outline" onClick={() => toggle(p.id)}><Icon name="plus" className="h-4 w-4" />{p.name}</button>)}</EmptyState>
       ) : (
         <div className="card overflow-x-auto"><table className="w-full table-fixed border-collapse text-xs sm:text-sm" style={{ minWidth: 92 + items.length * 128 }}>
           <caption className="sr-only">Product comparison</caption>

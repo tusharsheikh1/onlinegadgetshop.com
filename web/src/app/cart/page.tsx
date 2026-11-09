@@ -10,6 +10,7 @@ import { byId, taka, Product } from "@/data/products";
 import { useHydrated } from "@/lib/hooks";
 import { useStore } from "@/lib/store";
 import { totals } from "@/lib/totals";
+import { EmptyState } from "@/components/EmptyState";
 
 export default function Cart() {
   const cart = useStore((s) => s.cart); const setQty = useStore((s) => s.setQty); const remove = useStore((s) => s.removeFromCart);
@@ -22,7 +23,7 @@ export default function Cart() {
     <>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Cart" }]} />
       <PageTitle title={<><span className="sm:hidden">Your Cart{n > 0 && ` (${n} item${n > 1 ? "s" : ""})`}</span><span className="hidden sm:inline">Your Shopping Cart</span></>} sub="Review your items and proceed to checkout." />
-      {lines.length === 0 ? <div className="card p-10 text-center"><p className="font-bold">Your cart is empty.</p><Link href="/products" className="btn-primary mt-4">Continue shopping</Link></div> : (
+      {lines.length === 0 ? <EmptyState icon="cart" title="Your cart is empty" text="Looks like you haven't added anything yet. Explore our latest phones, audio and wearables."><Link href="/products" className="btn-primary">Start shopping</Link><Link href="/offers" className="btn-outline">View deals</Link></EmptyState> : (
         <div className="grid items-start gap-5 sm:gap-6 lg:grid-cols-[1fr_400px]">
           <div>
             <section className="sm:card sm:p-6" aria-labelledby="cart-items"><h2 id="cart-items" className="sr-only text-xl font-extrabold sm:not-sr-only sm:mb-4">{lines.length} Item{lines.length > 1 ? "s" : ""} in Your Cart</h2>

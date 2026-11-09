@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Product, categories } from "@/data/products";
 import { ProductCard } from "./ProductCard";
 import { Icon } from "./Icon";
+import { EmptyState } from "./EmptyState";
 
 const PER_PAGE = 9;
 const warrLabels = ["Up to 6 months", "6 – 12 months", "1 – 2 years", "2+ years"];
@@ -96,7 +97,7 @@ export function Catalog({ items, showCategory = true, defaultSort = "newest", ch
           )}
           {filtersOpen && <div className="mb-4 lg:hidden">{filters}</div>}
           {shown.length === 0 ? (
-            <div className="card p-10 text-center"><p className="font-bold">No products match your filters.</p><button onClick={clear} className="btn-primary mt-4">Clear filters</button></div>
+            <EmptyState icon="filter" title="No products match your filters" text="Try removing a filter or widening the price range."><button onClick={clear} className="btn-primary">Clear filters</button></EmptyState>
           ) : (
             <div className={view === "grid" ? "grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-3" : "grid gap-4"}>{shown.map((p) => <ProductCard key={p.id} p={p} layout={view === "grid" ? "stack" : "row"} />)}</div>
           )}

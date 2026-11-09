@@ -7,6 +7,7 @@ import { PageTitle } from "@/components/Page";
 import { byId, taka, Product } from "@/data/products";
 import { useHydrated } from "@/lib/hooks";
 import { useStore } from "@/lib/store";
+import { EmptyState } from "@/components/EmptyState";
 
 export default function Wishlist() {
   const ids = useStore((s) => s.wishlist); const toggle = useStore((s) => s.toggleWishlist); const add = useStore((s) => s.addToCart);
@@ -19,7 +20,7 @@ export default function Wishlist() {
       <PageTitle title="My Wishlist" sub="Your saved gadgets in one place. Add them to your cart anytime." />
       <div className="flex items-center justify-between border-b border-line pb-4"><h2 className="text-xl font-extrabold">{items.length} Saved Product{items.length === 1 ? "" : "s"}</h2>
         {items.length > 0 && <button onClick={clear} className="btn-outline"><Icon name="trash" className="h-4 w-4" />Clear Wishlist</button>}</div>
-      {items.length === 0 ? <div className="card mt-6 p-10 text-center"><p className="font-bold">Your wishlist is empty.</p><Link href="/products" className="btn-primary mt-4">Browse products</Link></div> : (
+      {items.length === 0 ? <EmptyState className="mt-6" icon="heart" title="Your wishlist is empty" text="Tap the heart on any product to save it here for later."><Link href="/products" className="btn-primary">Browse products</Link></EmptyState> : (
         <ul className="mt-5 space-y-4">{items.map((p) => (
           <li key={p.id} className="card flex items-center gap-4 p-3 sm:gap-6 sm:p-4">
             <Link href={`/products/${p.slug}`} className="flex h-24 w-24 shrink-0 items-center justify-center rounded-xl bg-surface sm:h-28 sm:w-40"><Image src={p.image} alt={p.name} width={165} height={183} className="max-h-20 w-auto object-contain sm:max-h-24" /></Link>
